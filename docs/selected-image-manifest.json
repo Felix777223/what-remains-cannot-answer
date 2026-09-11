@@ -1,0 +1,100 @@
+[
+  {
+    "file": "docs/images/visitor-experience.jpg",
+    "source_page": 2,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      44,
+      427,
+      852,
+      858
+    ]
+  },
+  {
+    "file": "docs/images/colour-blue-purple.jpg",
+    "source_page": 4,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      45,
+      914,
+      420,
+      1146
+    ]
+  },
+  {
+    "file": "docs/images/colour-purple-yellow.jpg",
+    "source_page": 4,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      439,
+      914,
+      852,
+      1146
+    ]
+  },
+  {
+    "file": "docs/images/lever-original.jpg",
+    "source_page": 8,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      69,
+      864,
+      147,
+      941
+    ]
+  },
+  {
+    "file": "docs/images/lever-enlarged.jpg",
+    "source_page": 8,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      247,
+      889,
+      315,
+      957
+    ]
+  },
+  {
+    "file": "docs/images/optical-sphere.jpg",
+    "source_page": 8,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      642,
+      1033,
+      783,
+      1117
+    ]
+  },
+  {
+    "file": "docs/images/future-spatial-instrument.jpg",
+    "source_page": 9,
+    "crop_reference_size": [
+      893,
+      1263
+    ],
+    "crop": [
+      0,
+      0,
+      893,
+      632
+    ]
+  }
+]

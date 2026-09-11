@@ -1,103 +1,109 @@
 # What Remains Cannot Answer
 
-**Feiyang Zhou · Exhibited 16 August 2026**
+**An interactive installation by Feiyang Zhou · 2026**
 
-An interactive installation exploring how a voice changes as it is remembered, repeated and gradually lost.
+A voice is recorded, repeated and gradually lost through sound, projection and touch.
 
-![Cover photograph from the project PDF: a visitor operates the installation in front of the purple projection](docs/images/cover.jpg)
+![A visitor operating the installation in front of a purple projection — the project PDF cover photograph](docs/images/cover.jpg)
 
-[Read the full project PDF](docs/What-Remains-Cannot-Answer.pdf) · [Figma documentation](https://www.figma.com/design/MiHoaIz8vv7OLAKDp2fHXL/Untitled?node-id=0-1) · [Setup instructions](docs/SETUP.md)
+**[Read Project PDF](docs/What-Remains-Cannot-Answer.pdf) · [View Figma](https://www.figma.com/design/MiHoaIz8vv7OLAKDp2fHXL/Untitled?node-id=0-1) · [Setup Guide](docs/SETUP.md)**
 
-**Video:** edited demonstration link to be added.
+**Documentation video:** coming soon.
 
-## 01 / Introduction
+## About the work
 
-Visitors move a lever, hear a cue and speak into a microphone. Their voice is captured and returned through a vibrating metal surface as five increasingly altered echoes. The imagery changes before eventually dissolving into darkness. Through listening, looking and touching, visitors experience a voice becoming a temporary trace.
+*What Remains Cannot Answer* explores the difference between preserving a signal and preserving a presence. A visitor's voice returns five times, becoming quieter and less recognisable. The projection grows more unstable before dissolving, while a metal contact surface carries the voice as vibration.
 
-![PDF page 2, Figs. 1–4: audience interaction, moving the lever, speaking into the microphone and touching the metal surface](docs/images/interaction.jpg)
+Research into Edison's speculative spirit phone, Mathilde Lavenne's *Artefact #0: Digital Necrophony* and Rafael Lozano-Hemmer's *Voice Array* informed the work. The full research, development record and reflection are available in the [project PDF](docs/What-Remains-Cannot-Answer.pdf).
 
-## 02 / Concept and background research
+## Interaction
 
-The project asks what remains when technology attempts to preserve a voice. A recording can retain a signal, but it cannot retain the speaker's presence or provide their response. Repetition makes this distinction perceptible: the voice returns, yet becomes altered and harder to recognise.
+1. **Move the lever.** A short beep cues recording.
+2. **Speak into the microphone.** The installation captures an utterance.
+3. **Listen and touch.** Five increasingly altered returns play through the audio system and metal vibration surface.
+4. **Watch the transformation.** The projection changes with the sequence. The faceted glass sphere offers another way to view it.
+5. **Let the sequence finish.** The imagery disappears and the prompt returns. Return the lever to centre before starting another interaction.
 
-Research into Edison's speculative spirit phone and Mathilde Lavenne's *Artefact #0: Digital Necrophony* informed this investigation. Rafael Lozano-Hemmer's *Voice Array* offered a reference for translating voice into light and organising recorded voices over time. My installation focuses on the transformation and disappearance of a single utterance.
+![A visitor experiencing the completed installation, from Fig. 1 in the project PDF](docs/images/visitor-experience.jpg)
 
-My earlier project, *Unanswered Signal*, explored bodily movement translated into imagery, sound and vibration. After discussing an early mechanical mark-making proposal with my tutor, I developed the work through sound, projection and tactile vibration.
+The glass sphere works optically. It fragments the view of the projection and is not an electronic sensor.
 
-![PDF page 3, Figs. 5–7: artistic references, earlier project, physical experiment and initial proposal](docs/images/concept-development.jpg)
-
-*Reference artworks and the early proposal are reproduced here as presented and identified in the project PDF. They are distinct from the completed installation.*
-
-## 03 / Technical implementation
-
-### Visual development
-
-Using PPPANIK's *Geometric Fractals* tutorial as a foundation, I added mirroring and adjusted base shapes, colour and distortion. The studies below follow the PDF's sequence, from early repeated patterns and colour tests to blue-purple distortion and purple-yellow imagery with the text prompt.
-
-OSC values from Max coordinate enlargement, distortion and trembling with the five voice returns. The prompt remains visible while idle, transitions into the imagery after the lever is moved, and returns when the sequence ends.
-
-![PDF page 4, Figs. 8–9: visual foundation, colour studies, geometric patterns, flowing distortion and text integration](docs/images/visual-development.jpg)
-
-### Sound development
-
-My earlier Max assignment, *Echo Accumulator*, informed the use of delay, filtering and decay. A short beep cues recording. Max then plays the recorded voice through an amplifier and vibration transducer as five tactile and audible echoes. Filtering, modulation and level changes make successive returns quieter and less recognisable.
-
-An early seven-return version produced an unwanted high-pitched sound. I reduced it to five returns and refined the processing, background ambience and timing.
-
-![PDF page 5, Figs. 10–11: annotated Max patch, earlier assignment and processing detail](docs/images/sound-development.jpg)
-
-### Control and visual integration
+## How it works
 
 ```text
-Lever → ESP32 → USB serial → Max
-Microphone → Max recording and processing
+Lever → ESP32 → USB serial → Max sequence control
+Microphone → Max recording and sound processing
                          ├─ audio → amplifier → transducer → metal surface
-                         └─ OSC → TouchDesigner → projection
+                         └─ OSC → TouchDesigner → projector
 ```
 
-The ESP32 sketch sends a trigger when the lever moves and re-arms after it returns to centre. Max sends `/remains/amp`, `/remains/state` and `/remains/decay` to TouchDesigner through OSC on local port 7000. I tested the complete chain across repeated interactions, refining the relationship between triggering, sound playback and visual transitions.
-
-![PDF page 6, Figs. 12–14: lever and code, Max serial reception and OSC transmission, TouchDesigner controls and integrated testing](docs/images/control-integration.jpg)
-
-### Physical interface and vibration output
-
-I hand-cut and drilled the acrylic enclosure, assembled the electronics and added embossed tin-sheet panels and lighting. I reused the vibration transducer from my earlier project, connecting the computer's audio output through an amplifier to the transducer and metal contact surface. An embossed hand motif indicates where visitors can touch and feel the returning echoes.
-
-![PDF page 7, Figs. 15–16: cutting, drilling, embossing, assembly, enclosure, tactile surface and amplifier wiring](docs/images/physical-fabrication.jpg)
-
-### Exhibition testing and refinement
-
-On site, I adjusted the projector position and repeatedly rearranged the microphone, controller, tactile output and metal-sheet base. I refined the projected text, imagery and colours, checking their appearance in the exhibition space.
-
-**I enlarged the lever to make it more noticeable and easier to operate.** I also revised the numbered, embossed and handwritten guidance. A faceted glass sphere provided an additional way to view the projection, fragmenting and repeating its changing imagery.
-
-![PDF page 8, Figs. 17–19: layout and projection tests; original versus enlarged lever; numbered and handwritten guidance; tactile interaction and optical sphere](docs/images/exhibition-refinement.jpg)
-
-### Files and running the installation
-
-| File | Purpose |
+| Part | Responsibility |
 | --- | --- |
-| [ESP32 sketch](firmware/butoon/butoon.ino) | Lever input and serial triggering |
-| [Max patch](max/Final_Max_Sound_Stable.maxpat) | Recording, sound processing, sequence control and OSC |
-| [TouchDesigner project](touchdesigner/final.toe) | Visual system |
-| [Setup notes](docs/SETUP.md) | Ports, dependencies, external sound files and checks |
+| ESP32 | Detect lever movement; send a serial trigger; re-arm when centred |
+| Max | Record the voice, schedule five returns, change filtering/modulation/levels, and play cue and ambience |
+| OSC | Carry amplitude, state and decay control values from Max to TouchDesigner |
+| TouchDesigner | Control visual enlargement, distortion, trembling and prompt transitions |
+| Amplifier and transducer | Convert the audio output into audible and tactile vibration |
 
-The three supplied program files are unchanged. Repository preparation checked file integrity and local documentation links; it did not re-run the hardware installation. The external sound files and their required filenames are documented in [References](docs/REFERENCES.md#sound-assets).
+The exhibited system uses **wired USB serial** between ESP32 and Max. Max sends OSC to **127.0.0.1:7000**, using `/remains/amp`, `/remains/state` and `/remains/decay`.
 
-## 04 / Reflection and future development
+## Setup and project files
 
-The project taught me that physical guidance and audiovisual timing shape the experience. Enlarging the lever and revising instructions helped connect visitors' actions with the changing voice.
+| File / document | Purpose |
+| --- | --- |
+| [butoon.ino](firmware/butoon/butoon.ino) | ESP32 lever firmware |
+| [Final_Max_Sound_Stable.maxpat](max/Final_Max_Sound_Stable.maxpat) | Sound processing and control patch |
+| [final.toe](touchdesigner/final.toe) | TouchDesigner visual project |
+| [Setup guide](docs/SETUP.md) | Dependencies, ports, audio files and verification notes |
+| [References and credits](docs/REFERENCES.md) | Tutorials, sound sources and AI use |
+| [Project PDF](docs/What-Remains-Cannot-Answer.pdf) | Complete illustrated development and reflection |
 
-I retained wired serial communication for this exhibition because I was concerned about wireless reliability on site. In future, I would test Wi-Fi communication between ESP32 and Max to reduce cabling and allow more flexible controller placement.
+To run the complete installation, you need an ESP32 and lever input, microphone, computer with Max and TouchDesigner, projector, amplifier and surface transducer.
 
-The tutors described the enclosure as having a guitar-pedal aesthetic and suggested multiple modules within a larger space. I want to develop this as a shared spatial instrument, with one voice transformed through several controls and vibration modules. More detailed processing of pitch, timbre and frequency content could produce richer echoes and visual transformations while retaining gradual degradation and disappearance.
+1. Upload the sketch using Arduino IDE with support for your ESP32 board.
+2. Obtain the [two credited sound effects](docs/REFERENCES.md#sound-assets) and place them beside the Max patch.
+3. Open Max, select the correct serial port at **115200 baud**, and configure audio input/output. The supplied patch names **COM3**; change it for your computer. Ensure the `o.pack` object is available.
+4. Open the TouchDesigner project and check OSC reception on **port 7000** on the same computer.
+5. Select the projector output, enable audio and test the complete interaction.
 
-![PDF page 9, Fig. 20: AI-generated future installation with a shared table of control and vibration modules](docs/images/future-concept.jpg)
+See the [setup guide](docs/SETUP.md) for details. The supplied code files are unchanged. Repository preparation checked their contents and documentation links; it did not repeat the full hardware test. Third-party audio is obtained separately from the credited source.
 
-*AI-generated concept visualisation, Fig. 20. This depicts a future proposal, not the exhibited installation.*
+## Selected development
 
-## 05 / References and AI use
+### Sound and visual behaviour
 
-See [references, sound credits and AI use statement](docs/REFERENCES.md). The [full PDF](docs/What-Remains-Cannot-Answer.pdf) includes the original figure captions and reference page.
+My earlier Max assignment, *Echo Accumulator*, informed the delay and decay structure. I reduced an early seven-return version to five and refined filtering, modulation and level changes. In TouchDesigner, I developed PPPANIK's *Geometric Fractals* tutorial through changes to mirroring, shape, colour, distortion and interaction mapping.
 
-All images on this page are taken directly from the supplied PDF, in its order. Figure groups retain their original comparisons, labels and arrangement. [Image provenance](docs/image-manifest.json) records each source page.
+| Blue-purple study | Purple-yellow study with prompt |
+| --- | --- |
+| ![Blue-purple visual study from PDF Fig. 9](docs/images/colour-blue-purple.jpg) | ![Purple-yellow visual study from PDF Fig. 9](docs/images/colour-purple-yellow.jpg) |
+
+### Making the controls easier to use
+
+**I enlarged the lever** to make it more noticeable and easier to operate. During exhibition setup, I also revised numbered, embossed and handwritten guidance and adjusted the projector and table layout.
+
+| Original lever | Enlarged lever |
+| --- | --- |
+| ![Original lever, PDF Fig. 18(a)](docs/images/lever-original.jpg) | ![Enlarged lever, PDF Fig. 18(b)](docs/images/lever-enlarged.jpg) |
+
+### Another way of seeing
+
+The faceted glass sphere fragments and repeats the projected imagery, adding a physical viewing action alongside speaking and touching.
+
+![Projection seen through the glass sphere, PDF Fig. 19(b)](docs/images/optical-sphere.jpg)
+
+The complete fabrication, testing and guidance comparisons remain in the [PDF, pages 7–8](docs/What-Remains-Cannot-Answer.pdf).
+
+## Future direction
+
+I want to test Wi-Fi communication under exhibition conditions and develop a shared spatial instrument: one voice transformed through multiple control and vibration modules. Further processing of pitch, timbre and frequency content could make the echoes and visual changes richer while retaining gradual disappearance.
+
+![AI-generated future concept from PDF Fig. 20](docs/images/future-spatial-instrument.jpg)
+
+*AI-generated concept visualisation of a proposed installation, not a photograph of the exhibited work.*
+
+## Credits and AI use
+
+I used AI for troubleshooting, English-language editing and concept imagery. I subsequently revised the trigger logic, sound processing and visual mappings, integrated the hardware and software, and tested the installation. AI also assisted with repository organisation and documentation.
+
+See [full references, sound credits and AI statement](docs/REFERENCES.md). Selected images use the same photographs and studies as the project PDF; the homepage arranges them for browsing and setup rather than reproducing its pages.
