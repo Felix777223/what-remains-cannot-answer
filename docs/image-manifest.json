@@ -1,0 +1,120 @@
+[
+  {
+    "file": "docs/images/cover.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 1,
+    "normalized_crop": [
+      0,
+      0.295,
+      1,
+      0.704
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/interaction.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 2,
+    "normalized_crop": [
+      0.047,
+      0.328,
+      0.956,
+      0.945
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/concept-development.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 3,
+    "normalized_crop": [
+      0.047,
+      0.422,
+      0.957,
+      0.955
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false,
+    "note": "Mixed reference and development images; Fig. 7(c) is an AI-generated early concept, as labelled in the PDF."
+  },
+  {
+    "file": "docs/images/visual-development.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 4,
+    "normalized_crop": [
+      0.047,
+      0.392,
+      0.963,
+      0.953
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/sound-development.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 5,
+    "normalized_crop": [
+      0.047,
+      0.434,
+      0.967,
+      0.955
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/control-integration.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 6,
+    "normalized_crop": [
+      0.047,
+      0.409,
+      0.97,
+      0.963
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/physical-fabrication.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 7,
+    "normalized_crop": [
+      0.047,
+      0.37,
+      0.973,
+      0.955
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/exhibition-refinement.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 8,
+    "normalized_crop": [
+      0.047,
+      0.365,
+      0.963,
+      0.966
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": false
+  },
+  {
+    "file": "docs/images/future-concept.jpg",
+    "source": "docs/What-Remains-Cannot-Answer.pdf",
+    "page": 9,
+    "normalized_crop": [
+      0,
+      0,
+      1,
+      0.543
+    ],
+    "method": "Rendered crop of the supplied PDF; original layout and figure labels retained.",
+    "ai_generated": true
+  }
+]

@@ -1,0 +1,12 @@
+# Local operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+# Local captures and third-party audio (obtain separately)
+*.wav
+*.mp3
+*.mp4
+*.mov
+# Editor backups
+*.bak
+*.autosave
