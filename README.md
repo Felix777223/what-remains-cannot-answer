@@ -6,9 +6,9 @@ A voice is recorded, repeated and gradually lost through sound, projection and t
 
 ![A visitor operating the installation in front of a purple projection — the project PDF cover photograph](docs/images/cover.jpg)
 
-**[Read Project PDF](docs/What-Remains-Cannot-Answer.pdf) · [View Figma](https://www.figma.com/design/MiHoaIz8vv7OLAKDp2fHXL/Untitled?node-id=0-1) · [Setup Guide](docs/SETUP.md)**
+**[Read Project PDF](docs/What-Remains-Cannot-Answer.pdf) · [Watch Exhibition Video](https://vimeo.com/1229670702) · [Setup Guide](docs/SETUP.md)**
 
-**Documentation video:** coming soon.
+**Documentation video:** [Watch on Vimeo](https://vimeo.com/1229670702).
 
 ## About the work
 
