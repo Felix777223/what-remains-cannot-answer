@@ -8,8 +8,6 @@ A voice is recorded, repeated and gradually lost through sound, projection and t
 
 **[Read Project PDF](docs/What-Remains-Cannot-Answer.pdf) · [Watch Exhibition Video](https://vimeo.com/1229670702) · [Setup Guide](docs/SETUP.md)**
 
-**Documentation video:** [Watch on Vimeo](https://vimeo.com/1229670702).
-
 ## About the work
 
 *What Remains Cannot Answer* explores the difference between preserving a signal and preserving a presence. A visitor's voice returns five times, becoming quieter and less recognisable. The projection grows more unstable before dissolving, while a metal contact surface carries the voice as vibration.
